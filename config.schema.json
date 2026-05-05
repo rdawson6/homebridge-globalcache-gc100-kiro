@@ -1,0 +1,158 @@
+{
+    "pluginAlias": "GC100KiroPlatform",
+    "pluginType": "platform",
+    "singular": true,
+    "headerDisplay": "Control Global Cache GC-100 RS232 zones via HomeKit. Zone switches control source selection (on = source, off = off). Volume zones appear as lightbulb brightness sliders.",
+    "footerDisplay": "RS232 commands should be Base64 encoded. Use [base64encode.org](https://www.base64encode.org/) to encode raw commands.",
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Platform Name",
+                "type": "string",
+                "default": "gc100kiro"
+            },
+            "host": {
+                "title": "GC100 IP Address",
+                "type": "string",
+                "placeholder": "192.168.4.200",
+                "required": true
+            },
+            "ir_port": {
+                "title": "IR Port",
+                "type": "string",
+                "default": "4998"
+            },
+            "rs232_devices": {
+                "title": "Zone Switches",
+                "type": "array",
+                "items": {
+                    "title": "Zone Switch",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "title": "Name",
+                            "type": "string",
+                            "required": true
+                        },
+                        "port": {
+                            "title": "Port",
+                            "type": "string",
+                            "default": "4999"
+                        },
+                        "base64_encoded": {
+                            "title": "Base64 Encoded",
+                            "type": "boolean",
+                            "default": true
+                        },
+                        "commands": {
+                            "type": "object",
+                            "properties": {
+                                "on": {
+                                    "title": "On Command",
+                                    "type": "string"
+                                },
+                                "off": {
+                                    "title": "Off Command",
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        "success_messages": {
+                            "type": "object",
+                            "properties": {
+                                "on": {
+                                    "title": "On Response",
+                                    "type": "string"
+                                },
+                                "off": {
+                                    "title": "Off Response",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "volume_devices": {
+                "title": "Volume Zones",
+                "type": "array",
+                "items": {
+                    "title": "Volume Zone",
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "title": "Name",
+                            "type": "string",
+                            "required": true
+                        },
+                        "zone": {
+                            "title": "Zone Number",
+                            "type": "string",
+                            "required": true
+                        },
+                        "port": {
+                            "title": "Port",
+                            "type": "string",
+                            "default": "4999"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "layout": [
+        {
+            "type": "section",
+            "title": "GC100 Device",
+            "expandable": false,
+            "items": [
+                "name",
+                "host",
+                "ir_port"
+            ]
+        },
+        {
+            "type": "section",
+            "title": "Zone Switches",
+            "description": "Each switch controls a zone's source input. On = select source, Off = zone off.",
+            "expandable": true,
+            "expanded": true,
+            "items": [
+                {
+                    "key": "rs232_devices",
+                    "type": "array",
+                    "buttonText": "Add Zone Switch",
+                    "items": [
+                        "rs232_devices[].name",
+                        "rs232_devices[].port",
+                        "rs232_devices[].base64_encoded",
+                        "rs232_devices[].commands.on",
+                        "rs232_devices[].commands.off",
+                        "rs232_devices[].success_messages.on",
+                        "rs232_devices[].success_messages.off"
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "section",
+            "title": "Volume Zones",
+            "description": "Each volume zone appears as a lightbulb — brightness slider controls volume (0–100% maps to amplifier range 0–30).",
+            "expandable": true,
+            "expanded": true,
+            "items": [
+                {
+                    "key": "volume_devices",
+                    "type": "array",
+                    "buttonText": "Add Volume Zone",
+                    "items": [
+                        "volume_devices[].name",
+                        "volume_devices[].zone",
+                        "volume_devices[].port"
+                    ]
+                }
+            ]
+        }
+    ]
+}

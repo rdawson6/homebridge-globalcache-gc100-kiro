@@ -1,0 +1,43 @@
+{
+  "name": "homebridge-globalcache-gc100-kiro",
+  "version": "0.3.0",
+  "displayName": "GlobalCache GC100 Kiro",
+  "description": "Globalcache GC100 Kiro - Enhanced homebridge plugin for Global Cache GC-100 IR/RS232 bridge with volume slider support and RS232 fixes",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "global cache",
+    "globalcache",
+    "gc100",
+    "volume",
+    "rs232",
+    "ir"
+  ],
+  "author": {
+    "name": "Rich Dawson",
+    "url": "https://github.com/rdawson6"
+  },
+  "contributors": [
+    {
+      "name": "Paul Wieland",
+      "url": "https://github.com/PaulWieland"
+    }
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0",
+    "homebridge": "^1.0.0 || ^2.0.0"
+  },
+  "dependencies": {},
+  "homepage": "https://github.com/rdawson6/homebridge-globalcache-gc100-kiro#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdawson6/homebridge-globalcache-gc100-kiro"
+  },
+  "bugs": {
+    "url": "https://github.com/rdawson6/homebridge-globalcache-gc100-kiro/issues"
+  }
+}
