@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.3] - 2026-05-06
+
+### Changed
+- Updated description to reference Systemline S6.2 and Kiro AI
+- Added Kiro AI to contributors
+
 ## [0.3.2] - 2026-05-06
 
 ### Changed

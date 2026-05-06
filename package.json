@@ -1,8 +1,8 @@
 {
   "name": "homebridge-globalcache-gc100-kiro",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "displayName": "GlobalCache GC100 Kiro",
-  "description": "Globalcache GC100 Kiro - Enhanced homebridge plugin for Global Cache GC-100 IR/RS232 bridge with volume slider support and RS232 fixes",
+  "description": "Homebridge plugin for controlling the Systemline S6.2 multi-room audio system via a Global Cache iTach GC-100 RS232 interface. Built with Kiro AI.",
   "main": "index.js",
   "scripts": {
     "test": ""
@@ -29,6 +29,10 @@
     {
       "name": "Paul Wieland",
       "url": "https://github.com/PaulWieland"
+    },
+    {
+      "name": "Kiro AI",
+      "url": "https://kiro.dev"
     }
   ],
   "license": "MIT",

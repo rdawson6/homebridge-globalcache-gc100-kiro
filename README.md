@@ -166,7 +166,7 @@ This plugin is fully compatible with Homebridge v2 and HAP-NodeJS v1.
 
 Based on the original [homebridge-globalcache-itach](https://github.com/PaulWieland/homebridge-globalcache-itach) by [Paul Wieland](https://github.com/PaulWieland).
 
-Enhanced for Systemline S6.2 RS232 control, volume slider support, state caching, and Homebridge v2 compatibility.
+Enhanced for Systemline S6.2 RS232 control, volume slider support, state caching, and Homebridge v2 compatibility. Built with [Kiro AI](https://kiro.dev).
 
 ---
 
