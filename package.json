@@ -1,6 +1,6 @@
 {
   "name": "homebridge-globalcache-gc100-kiro",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "displayName": "GlobalCache GC100 Kiro",
   "description": "Globalcache GC100 Kiro - Enhanced homebridge plugin for Global Cache GC-100 IR/RS232 bridge with volume slider support and RS232 fixes",
   "main": "index.js",
@@ -14,7 +14,12 @@
     "gc100",
     "volume",
     "rs232",
-    "ir"
+    "ir",
+    "systemline",
+    "s6.2",
+    "multiroom",
+    "multi-room",
+    "audio"
   ],
   "author": {
     "name": "Rich Dawson",
