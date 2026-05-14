@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.3.5] - 2026-05-14
+
+### Added
+- Systemline S6.2 branding icon (`branding/icon.png`) — now shows in Homebridge UI plugin list
+
+## [0.3.4] - 2026-05-14
+
+### Changed
+- Display name updated to **Systemline S6.2 Control**
+- Description updated to reference iTach IP2SL instead of GC-100
+- README updated — all hardware references changed from GC-100 to iTach IP2SL
+- Added `ip2sl` and `itach` keywords for better discoverability
+- GitHub Actions workflow updated to opt into Node.js 24 ahead of June 2026 deadline
+
 ## [0.3.3] - 2026-05-06
 
 ### Changed
