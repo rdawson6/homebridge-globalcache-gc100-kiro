@@ -57,7 +57,7 @@ GC100KiroPlatform.prototype._volSend = function(command, callback){
 	var responded = false;
 
 	sock.connect(4999, this.host, function(){
-		// Send command twice in one write — GC100 executes first, responds to second
+		// Send command twice in one write — iTach IP2SL executes first, responds to second
 		var doubled = command + command;
 		self.log('VOL TX: ' + command.trim() + ' (doubled)');
 		sock.write(doubled);

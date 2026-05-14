@@ -1,6 +1,6 @@
 # homebridge-globalcache-gc100-kiro
 
-A [Homebridge](https://homebridge.io) plugin for controlling the **Systemline S6.2 multi-room audio system** via a **Global Cache iTach GC-100** RS232 interface.
+A [Homebridge](https://homebridge.io) plugin for controlling the **Systemline S6.2 multi-room audio system** via a **Global Cache iTach IP2SL** RS232 interface.
 
 [![npm](https://img.shields.io/npm/v/homebridge-globalcache-gc100-kiro)](https://www.npmjs.com/package/homebridge-globalcache-gc100-kiro)
 [![Homebridge v2](https://img.shields.io/badge/homebridge-%5E1.0.0%20%7C%7C%20%5E2.0.0-blueviolet)](https://homebridge.io)
@@ -11,7 +11,7 @@ A [Homebridge](https://homebridge.io) plugin for controlling the **Systemline S6
 
 The [Systemline S6.2](https://www.systemline.co.uk) is an 8-zone multi-room audio matrix amplifier. It exposes a serial (RS232) control interface, but has no native IP connectivity.
 
-This plugin bridges that gap using a [Global Cache iTach GC-100](https://www.globalcache.com/products/gc-100/) — a network-to-serial adapter — to expose each S6.2 zone as a HomeKit accessory. You can then control your whole-home audio from the Apple Home app, Siri, or any HomeKit automation.
+This plugin bridges that gap using a [Global Cache iTach IP2SL](https://www.globalcache.com/products/itach/ip2slspecs/) — a network-to-serial adapter — to expose each S6.2 zone as a HomeKit accessory. You can then control your whole-home audio from the Apple Home app, Siri, or any HomeKit automation.
 
 **What you can do from HomeKit:**
 - Turn individual zones on or off (source selection)
@@ -23,9 +23,9 @@ This plugin bridges that gap using a [Global Cache iTach GC-100](https://www.glo
 ## Requirements
 
 - [Homebridge](https://homebridge.io) v1 or v2
-- Global Cache iTach GC-100 (network-to-serial adapter)
+- Global Cache iTach IP2SL (network-to-serial adapter)
 - Systemline S6.2 multi-room amplifier
-- GC-100 connected to the S6.2 RS232 port and reachable on your local network
+- iTach IP2SL connected to the S6.2 RS232 port and reachable on your local network
 
 ---
 
@@ -81,7 +81,7 @@ Add the platform to your Homebridge `config.json`. The plugin is best configured
 |--------|------|----------|-------------|
 | `platform` | string | ✅ | Must be `GC100KiroPlatform` |
 | `name` | string | ✅ | Platform name shown in logs |
-| `host` | string | ✅ | IP address of the GC-100 on your network |
+| `host` | string | ✅ | IP address of the iTach IP2SL on your network |
 | `ir_port` | string | | IR port (default: `4998`) |
 | `rs232_devices` | array | | Zone switch accessories (see below) |
 | `volume_devices` | array | | Volume control accessories (see below) |
@@ -93,7 +93,7 @@ Each entry creates a HomeKit **Switch** accessory that controls a zone's source 
 | Option | Type | Description |
 |--------|------|-------------|
 | `name` | string | Accessory name shown in HomeKit |
-| `port` | string | GC-100 RS232 port (default: `4999`) |
+| `port` | string | iTach IP2SL RS232 port (default: `4999`) |
 | `base64_encoded` | boolean | Set `true` if commands are Base64 encoded |
 | `commands.on` | string | RS232 command to turn zone on |
 | `commands.off` | string | RS232 command to turn zone off |
@@ -108,7 +108,7 @@ Each entry creates a HomeKit **Lightbulb** accessory where the brightness slider
 |--------|------|-------------|
 | `name` | string | Accessory name shown in HomeKit |
 | `zone` | string | S6.2 zone number (1–8) |
-| `port` | string | GC-100 RS232 port (default: `4999`) |
+| `port` | string | iTach IP2SL RS232 port (default: `4999`) |
 
 ---
 
@@ -148,7 +148,7 @@ Use [base64encode.org](https://www.base64encode.org/) to encode your own command
 
 ## How it works
 
-The GC-100 exposes its RS232 port over TCP on port 4999. This plugin opens a TCP socket to the GC-100 and sends raw RS232 commands directly to the S6.2.
+The iTach IP2SL exposes its RS232 port over TCP on port 4999. This plugin opens a TCP socket to the iTach and sends raw RS232 commands directly to the S6.2.
 
 **Zone switches** send a source-select or source-off command and read back the S6.2 response to determine state. State is cached after the first query to avoid unnecessary polling.
 

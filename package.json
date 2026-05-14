@@ -1,8 +1,8 @@
 {
   "name": "homebridge-globalcache-gc100-kiro",
-  "version": "0.3.3",
-  "displayName": "GlobalCache GC100 Kiro",
-  "description": "Homebridge plugin for controlling the Systemline S6.2 multi-room audio system via a Global Cache iTach GC-100 RS232 interface. Built with Kiro AI.",
+  "version": "0.3.4",
+  "displayName": "Systemline S6.2 Control",
+  "description": "Homebridge plugin for controlling the Systemline S6.2 multi-room audio system via a Global Cache iTach IP2SL RS232 interface. Exposes zones as HomeKit switches and volume sliders. Built with Kiro AI.",
   "main": "index.js",
   "scripts": {
     "test": ""
@@ -12,6 +12,8 @@
     "global cache",
     "globalcache",
     "gc100",
+    "ip2sl",
+    "itach",
     "volume",
     "rs232",
     "ir",
